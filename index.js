@@ -10,10 +10,28 @@ let weather = {
     },
     displayWeather: function(data) {
         const {name} = data["location"]
-        const {text , wind_kph, humidity, icon} = data["condition"]
-        const {temp_c} = data["current"]
-
+        const {text, icon } = data["current"]["condition"]
+        const {temp_c, wind_kph, humidity} = data["current"]
         console.log(name, text, wind_kph, humidity, icon, temp_c)
-
+        document.querySelector(".city").innerText = "Weather in "+name;
+        document.querySelector(".icon").src = icon;
+        document.querySelector(".description").innerText = text;
+        document.querySelector(".temp").innerText = temp_c+"°C";
+        document.querySelector(".humidity").innerText = "Humidity: "+humidity+"%";
+        document.querySelector(".wind").innerText = "Wind Speed: "+wind_kph+" Kmph";
+    },
+    search: function(){
+        this.fetchWeather(document.querySelector(".search-bar").value);
     }
-}
+};
+
+document.querySelector(".search-button").addEventListener("click", function() {
+    weather.search();
+})
+
+document.querySelector(".search-bar").addEventListener("keyup", function(event) {
+    if(event.key == "Enter") {
+        weather.search();
+    }
+})
+weather.fetchWeather("Chennai");
