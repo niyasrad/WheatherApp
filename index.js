@@ -23,7 +23,7 @@ let weather = {
         if (widerScreenWidth.matches) {
             document.body.style.backgroundImage = "url('https://source.unsplash.com/1920x1080/?" + name + "')"
         } else {
-            document.body.style.backgroundImage = "url('https://source.unsplash.com/824x1080/?" + name + "')"
+            document.body.style.backgroundImage = "url('https://source.unsplash.com/1080x1920/?" + name + "')"
         }
     },
     search: function(){
