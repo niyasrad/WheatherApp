@@ -19,7 +19,12 @@ let weather = {
         document.querySelector(".temp").innerText = temp_c+"°C";
         document.querySelector(".humidity").innerText = "Humidity: "+humidity+"%";
         document.querySelector(".wind").innerText = "Wind Speed: "+wind_kph+" Kmph";
-        document.body.style.backgroundImage = "url('https://source.unsplash.com/1920x1080/?" + name + "')"
+        var widerScreenWidth = window.matchMedia("(max-width: 600px)"); 
+        if (widerScreenWidth.matches) {
+            document.body.style.backgroundImage = "url('https://source.unsplash.com/1920x1080/?" + name + "')"
+        } else {
+            document.body.style.backgroundImage = "url('https://source.unsplash.com/824x1080/?" + name + "')"
+        }
     },
     search: function(){
         this.fetchWeather(document.querySelector(".search-bar").value);
