@@ -19,7 +19,7 @@ let weather = {
         document.querySelector(".temp").innerText = temp_c+"°C";
         document.querySelector(".humidity").innerText = "Humidity: "+humidity+"%";
         document.querySelector(".wind").innerText = "Wind Speed: "+wind_kph+" Kmph";
-        var widerScreenWidth = window.matchMedia("(max-width: 600px)"); 
+        var widerScreenWidth = window.matchMedia("(min-width: 600px)"); 
         if (widerScreenWidth.matches) {
             document.body.style.backgroundImage = "url('https://source.unsplash.com/1920x1080/?" + name + "')"
         } else {
