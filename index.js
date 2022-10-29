@@ -21,9 +21,9 @@ let weather = {
         document.querySelector(".wind").innerText = "Wind Speed: "+wind_kph+" Kmph";
         var widerScreenWidth = window.matchMedia("(min-width: 600px)"); 
         if (widerScreenWidth.matches) {
-            document.body.style.backgroundImage = "url('https://source.unsplash.com/1920x1080/?" + name + "')"
+            document.body.style.backgroundImage = "url('https://source.unsplash.com/1920x1080/?" + name + "')";
         } else {
-            document.body.style.backgroundImage = "url('https://source.unsplash.com/1080x1920/?" + name + "')"
+            document.body.style.backgroundImage = "url('https://source.unsplash.com/640x480/?" + name + "')";
         }
     },
     search: function(){
