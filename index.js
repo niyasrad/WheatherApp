@@ -18,13 +18,13 @@ let weather = {
         document.querySelector(".description").innerText = text;
         document.querySelector(".temp").innerText = temp_c+"°C";
         document.querySelector(".humidity").innerText = "Humidity: "+humidity+"%";
+        document.querySelector(".weather").classList.remove("loading")
         document.querySelector(".wind").innerText = "Wind Speed: "+wind_kph+" Kmph";
-        var widerScreenWidth = window.matchMedia("(min-width: 600px)"); 
-        if (widerScreenWidth.matches) {
-            document.body.style.backgroundImage = "url('https://source.unsplash.com/1920x1080/?" + name + "')";
-        } else {
-            document.body.style.backgroundImage = "url('https://source.unsplash.com/640x480/?" + name + "')";
-        }
+        document.body.style.backgroundImage = "url('https://source.unsplash.com/640x480/?" + name + "')";
+        // } else {
+        //     console.log('didnotmathc');
+        //     document.body.style.backgroundImage = "url('https://source.unsplash.com/1600x900/?" + name + "')";
+        // }
     },
     search: function(){
         this.fetchWeather(document.querySelector(".search-bar").value);
@@ -40,4 +40,4 @@ document.querySelector(".search-bar").addEventListener("keyup", function(event) 
         weather.search();
     }
 })
-weather.fetchWeather("Chennai");
+
