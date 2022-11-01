@@ -20,7 +20,7 @@ let weather = {
         document.querySelector(".humidity").innerText = "Humidity: "+humidity+"%";
         document.querySelector(".weather").classList.remove("loading")
         document.querySelector(".wind").innerText = "Wind Speed: "+wind_kph+" Kmph";
-        document.body.style.backgroundImage = "url('https://source.unsplash.com/640x480/?" + name + "')";
+        document.body.style.backgroundImage = "url('https://source.unsplash.com/1600x900/?" + name + "')";
         // } else {
         //     console.log('didnotmathc');
         //     document.body.style.backgroundImage = "url('https://source.unsplash.com/1600x900/?" + name + "')";
